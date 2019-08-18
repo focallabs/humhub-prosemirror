@@ -90,7 +90,7 @@ class MarkdownEditor {
         }
 
         let editorState = state.EditorState.create({
-            doc: this.parser.parse(md),
+            doc: typeof md === 'string' ? this.parser.parse(md) : md,
             plugins: setupPlugins(this.context)
         });
 
